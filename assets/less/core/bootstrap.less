@@ -1,0 +1,195 @@
+
+/* ==========================================================================
+	Buttons
+============================================================================= */
+
+.btn, 
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+	text-shadow: none;
+	border: none;
+	background-image: none;
+	font-weight: 300;
+	border-radius: 3px;
+	.transition(.4s @ease-out-quad);
+	.transition-property(background-color, color);
+	.box-shadow(none) !important;
+
+	&:hover {
+		background-color: #000;
+		color: #fff;
+	}
+}
+
+/* ==========================================================================
+	Progressbar
+============================================================================= */
+
+.progress {
+	height: 12px;
+	margin-bottom: @half-grid-gutter-width;
+
+	&, .progress-bar {
+		line-height: 12px;
+		.box-shadow(none);
+	}
+}
+
+/* ==========================================================================
+	Form
+============================================================================= */
+
+.form-control {
+	font-weight: 300;
+	.box-shadow(none) !important;
+	border-radius: 0;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.form-group {
+	[class*="col-sm-"], 
+	[class*="col-md-"], 
+	[class*="col-lg-"] {
+		margin-bottom: 15px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.search-form input {
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjE2cHgiPjxwYXRoIGZpbGw9IiNjY2NjY2MiIGQ9Ik0xNC45MDUsMTMuMDkxbC0zLjc1Mi0zLjc1M2MwLjYxLTAuOTQ2LDAuOTcxLTIuMDY5LDAuOTcxLTMuMjc3QzEyLjEyNCwyLjcxOCw5LjQwMywwLDYuMDYyLDAgQzIuNzE4LDAsMCwyLjcxOCwwLDYuMDYxYzAsMy4zNDMsMi43MTgsNi4wNjIsNi4wNjIsNi4wNjJjMS4yMDcsMCwyLjMzLTAuMzU4LDMuMjc3LTAuOTY5bDMuNzUxLDMuNzUyIGMwLjEyNiwwLjEyNiwwLjMzMiwwLjEyNiwwLjQ1NSwwbDEuMzYxLTEuMzYxQzE1LjAzMSwxMy40MiwxNS4wMzEsMTMuMjE2LDE0LjkwNSwxMy4wOTF6IE0xLjkyNCw2LjA2MSBjMC0yLjI3OSwxLjg1Ni00LjEzNiw0LjEzNy00LjEzNmMyLjI4MiwwLDQuMTM3LDEuODU2LDQuMTM3LDQuMTM2YzAsMi4yODItMS44NTUsNC4xMzctNC4xMzcsNC4xMzcgQzMuNzgsMTAuMTk4LDEuOTI0LDguMzQyLDEuOTI0LDYuMDYxeiIvPjwvc3ZnPg==');
+}
+
+/* ==========================================================================
+	Pager
+============================================================================= */
+.pager {
+	li {
+		> a,
+		> span {
+			color: #555;
+		}
+
+		> a:hover,
+		> a:focus {
+			color: #fff;
+		}
+	}
+}
+
+/* ==========================================================================
+	Pagination
+============================================================================= */
+
+.pagination {
+	> li {
+		display: inline-block;
+		> a,
+		> span {
+			color: @pagination-color;
+			background-color: @pagination-bg;
+		}
+		+ li {
+			margin-left: 3px;
+		}
+	}
+
+	> li > a,
+	> li > span {
+		color: @pagination-hover-color !important;
+		background-color: @pagination-hover-bg !important;
+	}
+
+	> .active > a,
+	> .active > span {
+		color: @pagination-active-color !important;
+		background-color: @pagination-active-bg !important;
+	}
+
+	> .disabled {
+		> span,
+		> a {
+			color: @pagination-disabled-color !important;
+			background-color: @pagination-disabled-bg !important;
+		}
+	}
+}
+
+/* ==========================================================================
+	Panel
+============================================================================= */
+
+.panel {
+	.box-shadow(none);
+}
+
+.panel-heading {
+	padding: 0;
+
+	.panel-title {
+		font-size: @font-size-base + 2;
+		line-height: 20px;
+
+		a[data-toggle="collapse"] {
+			position: relative;
+			display: block;
+			padding: 12px 15px;
+			background-color: #f5f5f5;
+
+			&:after {
+				font-family: 'FontAwesome';
+				position: absolute;
+				top: 12px; right: 15px;
+				text-align: center;
+				.fit-icon(20px);
+				font-size: @font-size-base;
+				content: '\f106';
+			}
+
+			&.collapsed {
+				background-color: transparent;
+				&:after {
+					content: '\f107';
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+	Alerts
+============================================================================= */
+
+.alert-success {
+	strong, h1, h2, h3, h4, h5, h6 {
+		color: darken(@brand-success, 20%) !important;
+	}
+}
+
+.alert-info {
+	strong, h1, h2, h3, h4, h5, h6 {
+		color: darken(@brand-info, 20%) !important;
+	}
+}
+
+.alert-warning {
+	strong, h1, h2, h3, h4, h5, h6 {
+		color: darken(@brand-warning, 20%) !important;
+	}
+}
+
+.alert-danger {
+	strong, h1, h2, h3, h4, h5, h6 {
+		color: darken(@brand-danger, 20%) !important;
+	}
+}

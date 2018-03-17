@@ -1,0 +1,176 @@
+
+/* ==========================================================================
+	Background Attributes
+============================================================================= */
+
+.has-bg {
+	background-repeat: repeat-y;
+	background-position: 50%;
+	background-size: cover;
+}
+
+.bg-size-auto {
+	background-size: auto;
+}
+
+.bg-fixed {
+	background-attachment: fixed;
+}
+
+/* ==========================================================================
+	Section
+============================================================================= */
+
+.section {
+	position: relative;
+	overflow: hidden;
+	background-color: @body-bg;
+}
+
+/* ==========================================================================
+	Section Row
+============================================================================= */
+
+.section-row {
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	z-index: 2;
+
+	&.bg-transparent {
+		background-color: transparent !important;
+	}
+
+	&.shadow-bg {
+		.property-shadow( background; @body-bg; 2% );
+	}
+}
+
+.section-row-padding( xs );
+
+/* ==========================================================================
+	General Section Title
+============================================================================= */
+
+.section-title, 
+.section-separator-title, 
+.section-subtitle {
+	&:extend(.headings-font-face);
+	position: relative;
+	text-transform: uppercase;
+	font-weight: 700;
+
+	small:extend(.body-font-face) {
+		font-weight: 300;
+		font-size: @font-size-base + 4;
+		line-height: 1.6;
+		display: block;
+		text-transform: none;
+
+		> .highlight {
+			display: inline-block;
+			padding: 5px 15px;
+			background-color: @brand-primary;
+			color: #fff;
+			margin: 5px 0;
+			font-size: @font-size-base + 2;
+		}
+	}
+}
+
+/* ==========================================================================
+	Section Title
+============================================================================= */
+
+.section-title {
+	line-height: 0.90277777777777777777777777777778;
+	margin-bottom: unit( ( @section-row-padding-size-lg * 0.5 ) / @h1-font-size-lg, em );
+	word-wrap: break-word;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: -23px; left: 0;
+		width: 60px;
+		height: 5px;
+		background-color: @brand-primary;
+	}
+	
+	small {
+		margin-top: 10px;
+	}
+
+	&.text-center:before {
+		display: none;
+	}
+
+	&.show-counter {
+		counter-increment: section-counter;
+
+		&:after {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-style: italic;
+			font-size: 4em;
+			position: absolute;
+			top: -@section-row-padding-size-xs;
+			left: 0;
+			line-height: 0.75;
+			z-index: -1;
+			font-weight: 700;
+			.property-shadow( color; @body-bg; 4% );
+			content: "0" counter(section-counter);
+		}
+	}
+
+	.section-row.page-title & {
+		margin-bottom: 0;
+	}
+}
+
+/* ==========================================================================
+	Section Separator Title
+============================================================================= */
+
+.section-separator-title {
+	line-height: 1;
+	margin-bottom: 1.4814814814814814814814814814815em;
+
+	> span {
+		display: block;
+		border-left: 0px solid;
+		.property-shadow( border-color; @body-bg; 4% );
+
+		&:after {
+			content: attr(data-shadow-text);
+			position: absolute;
+			left: 0; top: 0;
+			line-height: 0.71138888888888888888888888888889;
+			font-size: 2.6666666666666666666666666666667em;
+			white-space: nowrap;
+			z-index: -1;
+			.property-shadow( color; @body-bg; 4% );
+		}
+	}
+}
+
+/* ==========================================================================
+	Section Overlay
+============================================================================= */
+
+.section-overlay {
+	z-index: 1;
+	.overlay-box();
+	background-color: rgba(0, 0, 0, 0.4);
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAADUlEQVQIHWNgUGVgAAAAdAAmcohj8QAAAABJRU5ErkJggg==');
+}
+
+.section-media {
+	&:extend(.splash-media);
+}
+
+.aligned-video-wrapper {
+	.mejs-controls, .mejs-layers {
+		display: none;
+	}
+}

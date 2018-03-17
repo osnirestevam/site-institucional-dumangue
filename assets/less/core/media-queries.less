@@ -1,0 +1,598 @@
+
+/* ==========================================================================
+	Media Queries
+============================================================================= */
+@media (min-width: 480px) {
+
+	/* ==========================================================================
+		Client List
+	============================================================================= */
+	.client-list .client {
+		width: 100/2%;
+
+		&:after, 
+		&:before {
+			visibility: visible;
+		}
+
+		&:first-child:after, 
+		&:first-child:before, 
+		&:nth-child(2n+1):after, 
+		&:nth-child(2n+1):before {
+			visibility: hidden;
+		}
+	}
+
+	/* ==========================================================================
+		Google Maps
+	============================================================================= */
+	.google-maps-container {
+		padding-bottom: percentage(0.75);
+	}
+
+}
+
+@media (min-width: 768px) {
+
+	/* ==========================================================================
+		Typography
+	============================================================================= */
+	.heading-sizes( sm );
+
+	/* ==========================================================================
+		Site Splash
+	============================================================================= */
+	.splash-text {
+		.splash-description p {
+			font-size: @splash-text-description-font-size-sm;
+		}
+
+		.splash-headline {
+			font-size: @splash-text-headline-font-size-sm;
+		}
+	}
+
+	.splash-feedback {
+		display: block;
+	}
+
+	/* ==========================================================================
+		Site Header
+	============================================================================= */
+	.header-inner {
+		.header-table {
+			display: table;
+			width: 100%;
+			table-layout: fixed;
+		}
+
+		&.affix {
+			max-height: none;
+			overflow: visible;
+		}
+
+		.brand, 
+		.main-nav {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		.brand {
+			width: 200px;
+		}
+
+		.main-nav {
+			padding: 0 0 0 30px;
+			margin: 0;
+		}
+
+		.nav-toggle {
+			display: none;
+		}
+	}
+
+	.main-nav {
+		text-align: right;
+		font-size: 0;
+		white-space: nowrap;
+
+		ul li {
+			display: inline-block;
+			font-size: @font-size-base - 1;
+			border-top: none;
+
+			a {
+				padding: 27px @half-grid-gutter-width;
+
+				.sub-toggle {
+					display: none;
+				}
+			}
+
+			ul {
+				background-color: #fff;
+				.box-shadow(0 1px 3px rgba(0, 0, 0, 0.05));
+				text-align: left;
+				display: none !important;
+				position: absolute;
+				top: 100%;
+				right: 0;
+			}
+
+			li {
+				display: block;
+				min-width: 150px;
+				margin-left: 0;
+				border: 1px solid #e8e8e8;
+
+				& + li {
+					border-top: 0;
+				}
+
+				> ul {
+					left: 100%;
+					right: auto;
+					top: -1px;
+				}
+
+				a {
+					padding: 12px @half-grid-gutter-width;
+				}
+			}
+
+			&:hover > ul {
+				display: block !important;
+			}
+		}
+
+		> ul {
+			margin: 0;
+			display: block !important;
+
+			> li > ul {
+				border-top: 2px solid @brand-primary;
+				> li:first-child {
+					border-top: 0;
+				}
+			}
+		}
+	}
+
+	/* ==========================================================================
+		Section Row
+	============================================================================= */
+	.section-row-padding( sm );
+
+	/* ==========================================================================
+		Section Title
+	============================================================================= */
+	.section-title.show-counter:after {
+		top: -@section-row-padding-size-sm;
+	}
+
+	/* ==========================================================================
+		Section Separator Title
+	============================================================================= */
+	.section-separator-title {
+		white-space: nowrap;
+		
+		> span {
+			padding: 12px 0 12px @grid-gutter-width;
+			border-left-width: 1920px;
+			margin-left: -(1920px + @grid-gutter-width);
+		}
+	}
+
+	/* ==========================================================================
+		Projects
+	============================================================================= */
+	.projects {
+		.project-grids(720, @grid-gutter-width, 2);
+
+		.filter {
+			ul {
+				display: block;
+				position: relative;
+			}
+
+			li {
+				float: left;
+
+				& + li {
+					margin-left: 10px;
+				}
+
+				&.active {
+					display: block;
+				}
+			}
+
+			a {
+				padding: 10px;
+				display: inline-block;
+				border-radius: 3px;
+			}
+		}
+	}
+
+	/* ==========================================================================
+		Project Details
+	============================================================================= */
+	.project-details .section-row.project-media {
+		.ipad-slider, .iphone-slider, .macbook-slider {
+			margin-bottom: 0.95 * -@section-row-padding-size-sm;
+		}
+	}
+
+	/* ==========================================================================
+		Client List
+	============================================================================= */
+	.client-list .client {
+		width: 100/3%;
+
+		&:nth-child(2n+1):after, 
+		&:nth-child(2n+1):before {
+			visibility: visible;
+		}
+
+		&:nth-child(3n+1):after, 
+		&:nth-child(3n+1):before {
+			visibility: hidden;
+		}
+	}
+
+	/* ==========================================================================
+		Call to Action
+	============================================================================= */
+	.call-to-action.one-row {
+		.call-to-action-inner {
+			display: table;
+			width: 100%;
+		}
+
+		.col-text, 
+		.col-btn {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: left;
+			padding: 0;
+		}
+
+		.col-btn {
+			text-align: right;
+		}
+
+		.col-btn + .col-text, 
+		.col-text + .col-btn {
+			padding-left: 40px;
+			padding-top: 0;
+		}
+	}
+
+	/* ==========================================================================
+		Pricing
+	============================================================================= */
+	.pricing-table.featured {
+		padding-top: 60px;
+		padding-bottom: 60px;
+		margin-top: -20px;
+	}
+
+	/* ==========================================================================
+	   Counter
+	============================================================================= */
+	.counter .number {
+		font-size: @h1-font-size-sm;
+	}
+
+	/* ==========================================================================
+		Google Maps
+	============================================================================= */
+	.google-maps-container {
+		padding-bottom: percentage(9/16);
+	}
+
+	/* ==========================================================================
+		Figure in Slider
+	============================================================================= */
+	.royalSlider figure figcaption {
+		opacity: 1;
+	}
+
+	/* ==========================================================================
+		Form
+	============================================================================= */
+	.form-group [class*="col-sm-"] {
+		margin-bottom: 0;
+	}
+
+	/* ==========================================================================
+		Blog Post
+	============================================================================= */
+
+	.post {
+		padding-bottom: 2.5 * @h3-font-size-sm;
+		margin-bottom: 2.5 * @h3-font-size-sm;
+
+		.posts-wrap &:last-child {
+			margin-bottom: @h3-font-size-sm;
+		}
+	}
+
+	.post-media blockquote {
+		padding: @grid-gutter-width * 1.5 @grid-gutter-width * 2;
+		font-size: @font-size-base + 7;
+	}
+}
+
+@media (min-width: 992px) {
+
+	/* ==========================================================================
+		Typography
+	============================================================================= */
+	.heading-sizes( md );
+
+	/* ==========================================================================
+		Site Splash
+	============================================================================= */
+	.splash-text {
+		.splash-description p {
+			font-size: @splash-text-description-font-size-md;
+		}
+
+		.splash-headline {
+			font-size: @splash-text-headline-font-size-md;
+		}
+	}
+
+	/* ==========================================================================
+		Section Row
+	============================================================================= */
+	.section-row-padding( md );
+
+	/* ==========================================================================
+		Section Title
+	============================================================================= */
+	.section-title.show-counter:after {
+		top: -@section-row-padding-size-md;
+	}
+
+	/* ==========================================================================
+		Sidebar
+	============================================================================= */
+
+	.sidebar {
+		padding-left: @grid-gutter-width;
+
+		&.sidebar-left {
+			padding-left: @half-grid-gutter-width;
+			padding-right: @grid-gutter-width + 10;
+		}
+	}
+
+	.sidebar-block:first-child {
+		padding-top: 0 !important;
+		margin-top: 0 !important;
+		border-top: none !important;
+	}
+
+	/* ==========================================================================
+		Projects
+	============================================================================= */
+	.projects {
+		.project-grids(940, @grid-gutter-width, 3);
+	}
+
+	/* ==========================================================================
+		Project Details
+	============================================================================= */
+	.project-details {
+		.section-row {
+			&.project-title .section-title small {
+				width: percentage(10/12);
+			}
+
+			&.project-media {
+				.ipad-slider, .iphone-slider, .macbook-slider {
+					margin-bottom: 0.95 * -@section-row-padding-size-md;
+				}
+			}
+		}
+
+		.project-sidebar {
+			padding-left: 60px;
+		}
+	}
+
+	/* ==========================================================================
+		Client List
+	============================================================================= */
+	.client-list .client {
+		width: 100/4%;
+
+		&:nth-child(3n+1):after, 
+		&:nth-child(3n+1):before {
+			visibility: visible;
+		}
+
+		&:nth-child(4n+1):after, 
+		&:nth-child(4n+1):before {
+			visibility: hidden;
+		}
+	}
+
+	/* ==========================================================================
+		Testimonial & Tweets
+	============================================================================= */
+	.testimonial blockquote p {
+		font-size: 32px;
+	}
+
+	/* ==========================================================================
+		Recent Post
+	============================================================================= */
+	.recent-post .recent-post-body .meta {
+		display: block;
+	}
+
+	/* ==========================================================================
+	   Counter
+	============================================================================= */
+	.counter .number {
+		font-size: @h1-font-size-md;
+	}
+
+	/* ==========================================================================
+		Google Maps
+	============================================================================= */
+	.google-maps-container {
+		padding-bottom: percentage(27/64);
+	}
+
+	/* ==========================================================================
+		Form
+	============================================================================= */
+	.form-group [class*="col-md-"] {
+		margin-bottom: 0;
+	}
+
+	/* ==========================================================================
+		Sliders
+	============================================================================= */
+	.standard-slider, 
+	.nearby-slider {
+		padding-bottom: percentage(9/32);
+	}
+
+	/* ==========================================================================
+		Blog Post
+	============================================================================= */
+
+	.post {
+		padding-bottom: 2.5 * @h3-font-size-md;
+		margin-bottom: 2.5 * @h3-font-size-md;
+
+		.posts-wrap &:last-child {
+			margin-bottom: @h3-font-size-md;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+
+	/* ==========================================================================
+		Typography
+	============================================================================= */
+	.heading-sizes( lg );
+
+	/* ==========================================================================
+		Site Splash
+	============================================================================= */
+	.splash-text {
+		.splash-description p {
+			font-size: @splash-text-description-font-size-lg;
+		}
+
+		.splash-headline {
+			font-size: @splash-text-headline-font-size-lg;
+		}
+	}
+
+	/* ==========================================================================
+		Section Row
+	============================================================================= */
+	.section-row-padding( lg );
+
+	/* ==========================================================================
+		Section Title
+	============================================================================= */
+	.section-title {
+		.col-lg-1 &, 
+		.col-lg-2 &, 
+		.col-lg-3 &, 
+		.col-lg-4 &, 
+		.col-lg-5 &, 
+		.col-lg-6 & {
+			text-align: right;
+
+			&:before, 
+			&:after {
+				left: auto;
+				right: 0;
+			}
+		}
+
+		&.show-counter:after {
+			top: -@section-row-padding-size-lg;
+		}
+	}
+
+	/* ==========================================================================
+		Projects
+	============================================================================= */
+	.projects {
+		.project-grids(1140, @grid-gutter-width, 4);
+	}
+
+	/* ==========================================================================
+		Project Details
+	============================================================================= */
+	.project-details {
+		.section-row.project-media {
+			.ipad-slider, .iphone-slider, .macbook-slider {
+				margin-bottom: 0.95 * -@section-row-padding-size-lg;
+			}
+		}
+	}
+
+	/* ==========================================================================
+	   Counter
+	============================================================================= */
+	.counter .number {
+		font-size: @h1-font-size-lg;
+	}
+
+	/* ==========================================================================
+		Google Maps
+	============================================================================= */
+	.google-maps-container {
+		padding-bottom: percentage(9/32);
+	}
+	
+	/* ==========================================================================
+		Form
+	============================================================================= */
+	.form-group [class*="col-lg-"] {
+		margin-bottom: 0;
+	}
+
+	/* ==========================================================================
+		Client List
+	============================================================================= */
+	.client-list .client {
+		width: 100/5%;
+
+		&:nth-child(4n+1):after, 
+		&:nth-child(4n+1):before {
+			visibility: visible;
+		}
+
+		&:nth-child(5n+1):after, 
+		&:nth-child(5n+1):before {
+			visibility: hidden;
+		}
+	}
+
+	/* ==========================================================================
+		Blog Post
+	============================================================================= */
+
+	.post {
+		padding-bottom: 2.5 * @h3-font-size-lg;
+		margin-bottom: 2.5 * @h3-font-size-lg;
+
+		.posts-wrap &:last-child {
+			margin-bottom: @h3-font-size-lg;
+		}
+	}
+}

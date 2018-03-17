@@ -1,0 +1,114 @@
+
+.heading-sizes( @size ) {
+	h1, .h1 {
+		@var-name: "h1-font-size-@{size}";
+		font-size: @@var-name;
+	}
+	h2, .h2 {
+		@var-name: "h2-font-size-@{size}";
+		font-size: @@var-name;
+	}
+	h3, .h3 {
+		@var-name: "h3-font-size-@{size}";
+		font-size: @@var-name;
+	}
+}
+
+.spacer( @size; @increments: 10; @max: 140; ) when( @size <= @max ) {
+	.spacer-@{size} {
+		margin: unit(round(@size / 2), px)  0;
+	}
+	.spacer( @size + @increments; @increments; @max );
+}
+
+.section-row-padding( @size ) {
+	@var-name: "section-row-padding-size-@{size}";
+	@padding-size: @@var-name;
+
+	.section-row {
+		padding: @padding-size 0;
+
+		&.quarter-padding-top {
+			padding-top: round(@padding-size * 0.25);
+		}
+
+		&.quarter-padding-bottom {
+			padding-bottom: round(@padding-size * 0.25);
+		}
+
+		&.half-padding-top {
+			padding-top: round(@padding-size * 0.5);
+		}
+
+		&.half-padding-bottom {
+			padding-bottom: round(@padding-size * 0.5);
+		}
+
+		&.three-quarters-padding-top {
+			padding-top: round(@padding-size * 0.75);
+		}
+
+		&.three-quarters-padding-bottom {
+			padding-bottom: round(@padding-size * 0.75);
+		}
+	}
+}
+
+.property-shadow( @prop, @color, @amount ) when (lightness(@color) >= 50%) {
+	@{prop}: darken(@color, @amount);
+}
+
+.property-shadow( @prop, @color, @amount ) when (lightness(@color) < 50%) {
+	@{prop}: lighten(@color, @amount);
+}
+
+.overlay-box() {
+	position: absolute;
+	left: 0; top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.position-center( @width, @height ) {
+	left: 50%; top: 50%;
+	margin-left: round(@width / -2);
+	margin-top: round(@height / -2);
+}
+
+.vertical-center( @target; @font-size-restore; ) {
+	font-size: 0;
+
+	&:before {
+		content: '';
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	@{target} {
+		display: inline-block;
+		vertical-align: middle;
+		font-size: @font-size-restore;
+	}
+}
+
+.project-grids(@container-width, @gutter, @columns) {
+	@column-width: ( ( @container-width + @gutter - ( @columns * @gutter ) ) / @columns ) / @container-width;
+	@gutter-width: @gutter / @container-width;
+
+	.items {
+		.project, 
+		.grid-sizer {
+			width: percentage( @column-width );
+		}
+
+		.gutter-sizer {
+			width: percentage( @gutter-width );
+		}
+	}
+}
+
+.fit-icon(@size) {
+	.size(@size; @size);
+	line-height: @size;
+}

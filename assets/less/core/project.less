@@ -1,0 +1,306 @@
+
+/* ==========================================================================
+	Projects
+============================================================================= */
+
+.projects {
+	.filter {
+		position: relative;
+		margin-bottom: @grid-gutter-width;
+		.user-select(none);
+
+		.active-label {
+			display: block;
+			padding: 10px;
+			line-height: 1;
+			cursor: pointer;
+			.property-shadow( background; @body-bg; 4% );
+		}
+
+		ul {
+			.clearfix();
+			&:extend(ul.plain-list all);
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			z-index: 999;
+			display: none;
+			border-radius: 3px;
+		}
+
+		li {
+			line-height: 1;
+			&.active {
+				display: none;
+			}
+
+			&.active, &:hover {
+				a {
+					color: #fff;
+					background-color: @brand-primary;
+				}
+			}
+		}
+
+		a {
+			display: block;
+			color: @text-color;
+			padding: 10px;
+			.property-shadow( background-color; @body-bg; 4% );
+		}
+
+		&.open ul {
+			display: block;
+		}
+	}
+
+	.items {
+		.clearfix();
+		
+		.grid-sizer, 
+		.gutter-sizer {
+			position: absolute;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.gutter-sizer {
+			width: 0%;
+		}
+	}
+
+	.project {
+		float: left;
+		width: 100%;
+		.translate3d(0, 0, 0);
+		margin-bottom: @grid-gutter-width;
+	}
+
+	.project-image {
+		position: relative;
+		margin-bottom: 15px;
+		overflow: hidden;
+
+		img {
+			&:extend(.img-stretched);
+			.transition(transform .5s);
+		}
+
+		.overlay {
+			opacity: 0;
+			overflow: hidden;
+			.overlay-box();
+			background-color: rgba(255, 255, 255, 0.5);
+			.transition(opacity .4s @ease-out-quad);
+
+			.actions {
+				.clearfix();
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+
+				li {
+					float: left;
+					.transition(transform .25s @ease-out-quad);
+
+					&.zoom {
+						.rotate(90deg);
+						.transform-origin(left, bottom);
+					}
+
+					&.details {
+						.rotate(-90deg);
+						.transform-origin(right, top);
+					}
+				}
+
+				a {
+					display: block;
+					text-align: center;
+					width: 44px;
+					height: 44px;
+					color: #fff;
+					background-color: @brand-primary;
+
+					.fa, .gi {
+						.fit-icon(44px);
+						font-size: 16px;
+					}
+
+					&:hover {
+						background-color: #000;
+					}
+				}
+			}
+		}
+
+		&:hover, .touch {
+			img {
+				.transition-duration(30s);
+			}
+
+			.overlay {
+				opacity: 1;
+
+				.actions li {
+					&.zoom, 
+					&.details {
+						.rotate(0deg);
+					}
+				}
+			}
+		}
+	}
+
+	.project-info {
+		text-align: center;
+		padding: 0 15px;
+
+		.project-name {
+			margin: 0;
+		}
+	}
+
+	.csstransitions.desktop & .project-image {
+		&:hover, &.touch {
+			img {
+				.transform(rotate(45deg) scale(3));
+			}
+		}
+	}
+
+	.project-load-more {
+		text-align: center;
+		margin-top: 30px;
+
+		a {
+			display: inline-block;
+			width: 110px;
+			height: 110px;
+			border-radius: 50%;
+			color: #fff;
+			.property-shadow( background; @body-bg; 4% );
+
+			.fa, .gi {
+				.fit-icon(110px);
+				font-size: 64px;
+			}
+
+			&:hover {
+				background-color: @brand-primary;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+	Project Details
+============================================================================= */
+
+.project-details {
+	.sidebar-block {
+		&:first-child, 
+		+ .sidebar-block {
+			margin-top: ceil(1.33333 * @grid-gutter-width);
+		}
+	}
+
+	.section-row {
+		&.project-title .section-title {
+			margin: 0;
+			padding: 0;
+			word-wrap: normal;
+			
+			&:before {
+				display: none;
+			}
+
+			small {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+
+		&.project-media {
+			position: relative;
+			z-index: 99;
+			min-height: 1px;
+
+			.ipad-slider, 
+			.iphone-slider, 
+			.macbook-slider {
+				position: relative;
+				margin-bottom: 0.95 * -@section-row-padding-size-xs;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+	Project Details Popup
+============================================================================= */
+
+.project-details-popup {
+	.mfp-container {
+		padding: 0;
+		background-color: #fff;
+	}
+
+	.mfp-preloader {
+		color: #cccccc;
+		a {
+			color: #ccc;
+			&:hover {
+				color: white;
+			}
+		}
+	}
+
+	.project-controls {
+		text-align: center;
+		position: relative;
+		z-index: 3;
+		.box-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
+
+		ul {
+			&:extend(ul.plain-list all);
+
+			li {
+				display: inline-block;
+			}
+		}
+
+		button {
+			padding: 16px;
+			display: inline-block;
+			background-color: transparent;
+			border: none;
+			color: #d0d0d0;
+			outline: none;
+			line-height: 1;
+			.transition(all .4s @ease-out-quad);
+			.user-select(none);
+
+			&:hover {
+				color: #fff;
+				background-color: @brand-primary;
+			}
+
+			.fa, .gi {
+				.fit-icon(16px);
+			}
+		}
+	}
+
+	.project-title {
+		padding-top: 120px;
+	}
+	
+	.project-slide figure .actions {
+		display: none;
+	}
+}

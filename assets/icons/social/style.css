@@ -1,0 +1,134 @@
+
+.ics {
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	display: inline-block;
+	background-position: 24px 24px;
+	background-image: url('social.png');
+	background-repeat: no-repeat;
+}
+
+.ics-500px{background-position:0px 0px;}
+.ics-about-me{background-position:-24px 0px;}
+.ics-addthis{background-position:-48px 0px;}
+.ics-amazon{background-position:-72px 0px;}
+.ics-aol{background-position:-96px 0px;}
+.ics-app-store-2{background-position:-120px 0px;}
+.ics-app-store{background-position:-144px 0px;}
+.ics-apple{background-position:-168px 0px;}
+.ics-bebo{background-position:-192px 0px;}
+.ics-behance{background-position:-216px 0px;}
+.ics-bing{background-position:0px -24px;}
+.ics-blip{background-position:-24px -24px;}
+.ics-blogger{background-position:-48px -24px;}
+.ics-caroflot{background-position:-72px -24px;}
+.ics-daytum{background-position:-96px -24px;}
+.ics-delicious{background-position:-120px -24px;}
+.ics-design-bump{background-position:-144px -24px;}
+.ics-design-float{background-position:-168px -24px;}
+.ics-deviantart{background-position:-192px -24px;}
+.ics-digg{background-position:-216px -24px;}
+.ics-dopplr{background-position:0px -48px;}
+.ics-dribbble{background-position:-24px -48px;}
+.ics-drupal{background-position:-48px -48px;}
+.ics-ebay{background-position:-72px -48px;}
+.ics-email{background-position:-96px -48px;}
+.ics-ember-app{background-position:-120px -48px;}
+.ics-etsy{background-position:-144px -48px;}
+.ics-facebook{background-position:-168px -48px;}
+.ics-feedburner{background-position:-192px -48px;}
+.ics-flickr{background-position:-216px -48px;}
+.ics-foodspotting{background-position:0px -72px;}
+.ics-forrst{background-position:-24px -72px;}
+.ics-foursquare{background-position:-48px -72px;}
+.ics-friendfeed{background-position:-72px -72px;}
+.ics-friendster{background-position:-96px -72px;}
+.ics-gdgt{background-position:-120px -72px;}
+.ics-github{background-position:-144px -72px;}
+.ics-google-buzz{background-position:-168px -72px;}
+.ics-google-plus-2{background-position:-192px -72px;}
+.ics-google-plus-3{background-position:-216px -72px;}
+.ics-google-plus{background-position:0px -96px;}
+.ics-google-talk{background-position:-24px -96px;}
+.ics-google{background-position:-48px -96px;}
+.ics-gowalla-2{background-position:-72px -96px;}
+.ics-gowalla{background-position:-96px -96px;}
+.ics-grooveshark{background-position:-120px -96px;}
+.ics-heart{background-position:-144px -96px;}
+.ics-hyves{background-position:-168px -96px;}
+.ics-icondock{background-position:-192px -96px;}
+.ics-icq{background-position:-216px -96px;}
+.ics-identi-ca{background-position:0px -120px;}
+.ics-imessage{background-position:-24px -120px;}
+.ics-instagram{background-position:-48px -120px;}
+.ics-itunes{background-position:-72px -120px;}
+.ics-last-fm{background-position:-96px -120px;}
+.ics-linkedin{background-position:-120px -120px;}
+.ics-meetup{background-position:-144px -120px;}
+.ics-metacafe{background-position:-168px -120px;}
+.ics-microsoft{background-position:-192px -120px;}
+.ics-mister-wong{background-position:-216px -120px;}
+.ics-mixx{background-position:0px -144px;}
+.ics-mobileme{background-position:-24px -144px;}
+.ics-msn{background-position:-48px -144px;}
+.ics-myspace{background-position:-72px -144px;}
+.ics-netvibes{background-position:-96px -144px;}
+.ics-newsvine{background-position:-120px -144px;}
+.ics-paypal{background-position:-144px -144px;}
+.ics-photobucket{background-position:-168px -144px;}
+.ics-picasa{background-position:-192px -144px;}
+.ics-pinterest{background-position:-216px -144px;}
+.ics-podcast{background-position:0px -168px;}
+.ics-posterous{background-position:-24px -168px;}
+.ics-qik{background-position:-48px -168px;}
+.ics-quora{background-position:-72px -168px;}
+.ics-reddit{background-position:-96px -168px;}
+.ics-rss{background-position:-120px -168px;}
+.ics-scribd{background-position:-144px -168px;}
+.ics-share-this{background-position:-168px -168px;}
+.ics-skype{background-position:-192px -168px;}
+.ics-slash-dot{background-position:-216px -168px;}
+.ics-slideshare{background-position:0px -192px;}
+.ics-smugmug{background-position:-24px -192px;}
+.ics-soundcloud{background-position:-48px -192px;}
+.ics-spotify{background-position:-72px -192px;}
+.ics-squidoo{background-position:-96px -192px;}
+.ics-stackoverflow{background-position:-120px -192px;}
+.ics-star{background-position:-144px -192px;}
+.ics-stumbleupon-2{background-position:-168px -192px;}
+.ics-stumbleupon{background-position:-192px -192px;}
+.ics-technorati{background-position:-216px -192px;}
+.ics-tumblr{background-position:0px -216px;}
+.ics-twitter-2{background-position:-24px -216px;}
+.ics-twitter-3{background-position:-48px -216px;}
+.ics-twitter{background-position:-72px -216px;}
+.ics-viddler{background-position:-96px -216px;}
+.ics-vimeo{background-position:-120px -216px;}
+.ics-virb{background-position:-144px -216px;}
+.ics-w3c{background-position:-168px -216px;}
+.ics-wikipedia{background-position:-192px -216px;}
+.ics-wordpress-2{background-position:-216px -216px;}
+.ics-wordpress{background-position:0px -240px;}
+.ics-xing{background-position:-24px -240px;}
+.ics-yahoo-buzz{background-position:-48px -240px;}
+.ics-yahoo{background-position:-72px -240px;}
+.ics-yelp{background-position:-96px -240px;}
+.ics-youtube{background-position:-120px -240px;}
+
+/* Retina Displays
+================================================== */
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx)
+{
+	.ics {
+		background-size: 240px 264px;
+		background-image: url('social@2x.png');
+	}
+}

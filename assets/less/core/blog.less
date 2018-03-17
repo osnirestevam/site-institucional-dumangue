@@ -1,0 +1,235 @@
+
+/* ==========================================================================
+	Recent Post
+============================================================================= */
+
+.recent-post {
+	background-color: @body-bg;
+
+	blockquote {
+		margin: 0 0 15px;
+		font-size: @font-size-base + 2;
+	}
+}
+
+.recent-post-media.standard-slider {
+	padding-bottom: percentage(5/9);
+}
+
+.recent-post-body {
+	padding: 35px;
+	position: relative;
+	overflow: hidden;
+
+	.post-title:extend(.headings-font-face) {
+		margin: 0 0 0.5556em;
+		text-transform: uppercase;
+		font-weight: 700;
+		word-wrap: break-word;
+	}
+	
+	.read-more-link {
+		width: 28px;
+		height: 28px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		text-align: center;
+		color: #fff;
+		background-color: @brand-primary;
+		.translate3d(100%, -100%, 0);
+		.transition(background-color .4s @ease-out-quad, transform .1s @ease-out-quad);
+
+		.fa, .gi {
+			.fit-icon(28px);
+			font-size: @font-size-base + 2;
+		}
+
+		&:after, &:before {
+			content: '';
+			position: absolute;
+			border: 14px solid transparent;
+			border-top-color: @brand-primary;
+  			border-right-color: @brand-primary;
+			.transition(border-color .4s @ease-out-quad);
+		}
+
+		&:after {
+			right: 100%;
+			top: 0;
+		}
+
+		&:before {
+			right: 0;
+			top: 100%;
+		}
+
+		&:hover {
+			background-color: #000;
+			&:after, &:before {
+				border-top-color: #000;
+				border-right-color: #000;
+			}
+		}
+	}
+
+	&:hover, &.touch {
+		.read-more-link {
+			.translate3d(0, 0, 0);
+		}
+	}
+
+	.meta {
+		display: none;
+		ul {
+			.clearfix();
+			&:extend(ul.plain-list all);
+
+			li {
+				float: left;
+
+				& + li {
+					margin-left: 15px;
+				}
+			}
+		}
+	}
+
+	.content {
+		position: relative;
+		z-index: 1;
+	}
+
+	&:before {
+		position: absolute;
+		font-family: 'glyphicons';
+		.fit-icon(144px);
+		font-size: 144px;
+		right: 20px;
+		bottom: 20px;
+		content: '\e128';
+		.property-shadow( color; @body-bg; 4% );
+	}
+}
+
+.recent-post {
+	&.post-image .recent-post-body:before {
+		content: '\e12b';
+	}
+
+	&.post-video .recent-post-body:before {
+		content: '\e099';
+	}
+
+	&.post-audio .recent-post-body:before {
+		content: '\e114';
+	}
+
+	&.post-quote .recent-post-body:before {
+		font-family: 'FontAwesome';
+		content: '\f10d';
+	}
+
+	&.post-link .recent-post-body:before {
+		content: '\e0f6';
+	}
+}
+
+/* ==========================================================================
+	Post
+============================================================================= */
+
+.post {
+	padding-bottom: 2.5 * @h3-font-size-xs;
+	border-bottom: 1px solid;
+	.property-shadow( border-bottom-color; @body-bg; 9% );
+	margin-bottom: 2.5 * @h3-font-size-xs;
+
+	.posts-wrap &:last-child {
+		margin-bottom: @h3-font-size-xs;
+	}
+}
+
+.post-media {
+	margin-bottom: percentage(@h3-font-size-lg / 1170);
+
+	blockquote {
+		margin: 0 0 15px;
+		color: @headings-color;
+		position: relative;
+		padding: @grid-gutter-width @grid-gutter-width * 1.5;
+		font-size: @font-size-base + 4;
+		border-radius: 6px;
+		.property-shadow( background; @body-bg; 4% );
+
+		&:before {
+			position: absolute;
+			content: '\f10d';
+			color: @body-bg;
+			font-family: 'FontAwesome';
+			right: @grid-gutter-width;
+			bottom: @half-grid-gutter-width;
+			font-size: 108px;
+			.fit-icon(108px);
+			.transition(color .4s @ease-out-quad);
+		}
+
+		p, small {
+			z-index: 1;
+			position: relative;
+		}
+	}
+}
+
+.post-header {
+	.post-title:extend(.headings-font-face) {
+		font-weight: 700;
+		text-transform: uppercase;
+		margin: 0;
+		word-wrap: break-word;
+
+		a {
+			color: inherit;
+		}
+	}
+
+	.meta {
+		&:extend(ul.plain-list all);
+
+		li {
+			display: inline-block;
+			font-weight: 400;
+			color: @text-muted;
+		}
+
+		a {
+			display: inline-block;
+			border-bottom: 1px dotted;
+			.property-shadow( border-bottom-color; @body-bg; 18% );
+
+			&:hover {
+				border-bottom-color: @brand-primary !important;
+			}
+		}
+	}
+
+	.post-date {
+		font-weight: 400;
+		color: @text-muted;
+		text-transform: uppercase;
+		font-size: @font-size-base - 1;
+	}
+
+	margin-bottom: 1.5 * @h3-font-size-xs;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.post-body {
+	font-weight: 400;
+	p {
+		margin-bottom: 1.8em;
+	}
+}
