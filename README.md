@@ -5,3 +5,11 @@
 O site institucional do estúdio de design Dumangue compõe parte do Trabalho de Conclusão de Curso (TCC), apresentado ao Centro Universitário Anhanguera de São Paulo como requisito parcial à obtenção do título de Bacharel em Design.  
 
 Primeiramente foi desenvolvido o Manual de Identidade Visual (MIV). Em paralelo, houve a construção do site contendo projetos e trabalhos dos integrantes, bem como, demais informações sobre o estúdio.
+
+## **Equipe**
+
+- Júlio César
+- Luciana Pestana
+- Natália Garcia
+- Osnir Estevam
+- Ronnie Dalton
